@@ -2,17 +2,11 @@ package stepDefination;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.Duration;
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.GherkinKeyword;
-import com.aventstack.extentreports.gherkin.model.Feature;
 
 import PageObjects.CustomersPage;
 import PageObjects.LoginPage;
@@ -40,12 +34,7 @@ public class Stepdefination  {
 		loginPage = new LoginPage(driver);
 		customersPage = new CustomersPage(driver);
 		
-		/*
-		 * extentTest=extentReports.createTest(Feature.class, "Feature File");
-		 * extentTest.createNode(new
-		 * GherkinKeyword("Given"),"^user launches chrome browser$");
-		 * extentTest.addScreenCaptureFromPath(getScreenshot(driver));
-		 */
+	
 	}
 
 	@When("^user enter the url \"([^\"]*)\"$")
