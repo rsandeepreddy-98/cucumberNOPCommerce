@@ -2,8 +2,7 @@ package stepDefination;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -55,6 +54,7 @@ public class Stepdefination  {
 		Thread.sleep(2000);
 		loginPage.setPasswordElement(pass);
 		Thread.sleep(1500);
+		
 		//extentTest.addScreenCaptureFromPath(getScreenshot(driver));
 	}
 
@@ -63,9 +63,15 @@ public class Stepdefination  {
 
 		loginPage.setLoginButton();
 		Thread.sleep(1500);
-		//extentTest.addScreenCaptureFromPath(getScreenshot(driver));
-	}
+		}
 
+	@When("^user should be able to see dashboard page and verify it$")
+	public void user_should_be_able_to_see_dashboard_page_and_verify_it() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   String actual  = "Dashboard / nopCommerce administration";
+	   Assert.assertEquals(loginPage.getPageTitle(), actual);
+	}
+	
 	@When("^user clicks on Customer Menu in the left navigation bar$")
 	public void user_clicks_on_Customer_Menu_in_the_left_navigation_bar() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
